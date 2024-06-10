@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'heavyFont';
+    src: url(/fonts/ObjectSans-Heavy.otf);
+}
+
+@font-face {
+    font-family: 'regularFont';
+    src: url(/fonts/ObjectSans-Regular.otf);
+}
+
+:root {
+
+    --backgroundColor: #F0F3FA;
+    --buttonColor: #F57118;
+    --textColor: #123EB7;
+}
+
+header {
+    background-color: var(--backgroundColor);
+    padding: 50px 40px 40px 30px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'heavyFont', sans-serif;
+}
+
+.intro-text {
+    padding: 40px 20px 60px 20px;
+    max-width: 375px;
+    margin: auto;
+}
+
+.intro-text p {
+    font-size: 20px;
+    font-family: 'regularFont', sans-serif;
+    line-height: 32px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+.svg-container {
+    display: inline-block;
+    position: relative;
+}
+
+.plus-button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: var(--buttonColor);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.plus-button::before,
+.plus-button::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+}
+
+.plus-button::before {
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    height: 2.5px;
+    transform: translateY(-50%);
+}
+
+.plus-button::after {
+    left: 50%;
+    top: 25%;
+    width: 2.5px;
+    height: 50%;
+    transform: translateX(-50%);
+}
+
+.plus-button:hover {
+    background-color: #45a049;
+}
+
+.svg-container .plus-button:nth-child(2) {
+    left: 14%;
+    bottom: 38%;
+}
+
+.svg-container .plus-button:nth-child(3) {
+    left: 44%;
+    bottom: 7%;
+}
+
+.svg-container .plus-button:nth-child(4) {
+    left: 88%;
+    bottom: 51%;
+}
+
+.svg-container .plus-button:nth-child(5) {
+    left: 70%;
+    bottom: 48%;
+}
+
+.svg-container .plus-button:nth-child(6) {
+    left: 53%;
+    bottom: 88%;
+}
+
+.chapter-display {
+    margin-top: 20px;
+    padding: 20px;
+    display: none; /* Verberg de sectie standaard */
+}
+
+@media screen and (min-width: 1000px) {
+
+    h1 {
+        font-size: 64px;
+    }
+}

@@ -1,0 +1,24 @@
+<!-- Hier word de header geinclude -->
+<%- include('./partials/head') %>
+
+<header>
+    <h1>
+        Exposense
+    </h1>
+</header>
+
+<section class="intro-text">
+    <p><%= tno.intro %></p>
+</section>
+
+<div class="container">
+    <div class="svg-container">
+        <img src="/assets/vector-1-color-small.svg" alt="plaatje over uitstoot van schadelijke gassen">
+        <% chapters.forEach(function(chapter) { %>
+            <a href="/chapter/<%= chapter.id %>" class="plus-button" data-id="<%= chapter.id %>"></a>
+        <% }) %>
+    </div>
+</div>
+<div id="chapter-display" class="chapter-display"></div>
+<!-- Hier word de foot geinclude -->
+<%- include('./partials/foot') %>
