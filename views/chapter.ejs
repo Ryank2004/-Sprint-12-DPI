@@ -1,11 +1,13 @@
-<!-- Hier word de header geinclude -->
-<%- include('./partials/head') %>
 
 <div class="chapter-container">
+    <a href="/" class="close-button">
+        <span class="material-symbols-outlined">close</span>
+    </a>
+    <img class="chapter-image" src="/assets/island_color_<%= chapter.id %>.svg" alt="Island Image <%= chapter.id %>">
     <h2><%= chapter.title %></h2>
-    <p><%- chapter.content %></p>
-    <a href="/">Terug naar overzicht</a>
+    <div class="chapter-info"><%- chapter.content %></div>
+    <a href="/" class="video-button">Bekijk de video<span class="material-symbols-outlined">
+        arrow_forward
+        </span></a>
 </div>
 
-<!-- Hier word de foot geinclude -->
-<%- include('./partials/foot') %>

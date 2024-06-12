@@ -33,6 +33,13 @@ h1 {
     font-family: 'heavyFont', sans-serif;
 }
 
+h2 {
+    color: var(--textColor);
+    font-family: 'heavyFont', sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+}
+
 .intro-text {
     padding: 40px 20px 60px 20px;
     max-width: 375px;
@@ -45,11 +52,12 @@ h1 {
     line-height: 32px;
 }
 
-.container {
+.svg-container {
     display: flex;
     justify-content: center;
 }
-.svg-container {
+
+.svg-content {
     display: inline-block;
     position: relative;
 }
@@ -87,30 +95,35 @@ h1 {
 }
 
 .plus-button:hover {
-    background-color: #45a049;
+    background-color: var(--textColor);
 }
 
-.svg-container .plus-button:nth-child(2) {
+.plus-button:hover::before,
+.plus-button:hover::after {
+    background-color: white;
+}
+
+.svg-content .plus-button:nth-child(2) {
     left: 14%;
     bottom: 38%;
 }
 
-.svg-container .plus-button:nth-child(3) {
+.svg-content .plus-button:nth-child(3) {
     left: 44%;
     bottom: 7%;
 }
 
-.svg-container .plus-button:nth-child(4) {
+.svg-content .plus-button:nth-child(4) {
+    left: 70%; 
+    bottom: 48%; 
+}
+
+.svg-content .plus-button:nth-child(5) {
     left: 88%;
     bottom: 51%;
 }
 
-.svg-container .plus-button:nth-child(5) {
-    left: 70%;
-    bottom: 48%;
-}
-
-.svg-container .plus-button:nth-child(6) {
+.svg-content .plus-button:nth-child(6) {
     left: 53%;
     bottom: 88%;
 }
@@ -118,7 +131,75 @@ h1 {
 .chapter-display {
     margin-top: 20px;
     padding: 20px;
-    display: none; /* Verberg de sectie standaard */
+    display: none;
+}
+
+.chapter-container {
+    background-color: var(--backgroundColor);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.chapter-info {
+    font-family: 'regularFont', sans-serif;
+    margin-top: 10px;
+    line-height: 24px;
+}
+
+.chapter-image {
+    min-width: 250px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.video-button {
+    display: inline-flex; 
+    align-items: center;
+    font-family: 'heavyFont', sans-serif;
+    background-color: white;
+    padding: 8px 24px; 
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--textColor);
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.video-button span {
+    font-weight: 700;
+    font-size: 28px;
+    margin-left: 10px;
+}
+
+.close-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit; 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button span {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.footer {
+    display: flex;
+    color: black;
+    justify-content: center;
+    padding: 80px 70px;
+    margin-top: 50px;
+    background-color: var(--backgroundColor);
 }
 
 @media screen and (min-width: 1000px) {

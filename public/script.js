@@ -16,6 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(html => {
                 chapterDisplay.innerHTML = html;
                 chapterDisplay.style.display = 'block';
+
+                // Scroll to the chapter display element
+                window.scroll({
+                    top: chapterDisplay.offsetTop,
+                    behavior: 'smooth'
+                });
+
+                const closeButton = chapterDisplay.querySelector('.close-button');
+                closeButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    chapterDisplay.style.display = 'none';
+                });
             })
             .catch(error => {
                 console.error('Error fetching chapter data:', error);
