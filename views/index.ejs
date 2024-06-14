@@ -1,4 +1,4 @@
-<!-- Hier word de header geinclude -->
+<!-- Hier wordt de header geinclude -->
 <%- include('./partials/head') %>
 
 <header>
@@ -13,14 +13,19 @@
 
 <div class="svg-container">
     <div class="svg-content">
-        <img src="/assets/plaat_mobile_color.svg" alt="plaatje over uitstoot van schadelijke gassen">
+            <img class="svg-grey" src="/assets/plaat_mobile.svg" alt="plaatje over uitstoot van schadelijke gassen">
+            <img class="svg-color" src="/assets/plaat_mobile_color.svg" alt="plaatje over uitstoot van schadelijke gassen">
+        <div class="buttons">
         <% chapters.forEach(function(chapter) { %>
             <a href="/chapter/<%= chapter.id %>" class="plus-button" data-id="<%= chapter.id %>"></a>
         <% }) %>
+        </div>
     </div>
 </div>
 
-<div id="chapter-display" class="chapter-display"></div>
+<section class="chapter-display-container">
+    <div id="chapter-display" class="chapter-display"></div>
+</section>
 
-<!-- Hier word de foot geinclude -->
+<!-- Hier wordt de foot geinclude -->
 <%- include('./partials/foot') %>
