@@ -43,5 +43,38 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.error('Error fetching chapter data:', error); // Log de fout als er iets misgaat bij het ophalen van data
             });
     }
+
+     // Function to add class on hover
+     function addClassOnHover() {
+        svg_elements.forEach(function(svg_element) {
+            svg_element.classList.add('svg-grey');
+        });
+    }
+
+    // Function to remove class when not hovering
+    function removeClassOnHover() {
+        svg_elements.forEach(function(svg_element) {
+            svg_element.classList.remove('svg-grey');
+        });
+    }
+
+    // Select all SVG elements with the class 'svg-color'
+    var svg_elements = document.querySelectorAll('.svg-color');
+
+    // Select all button elements with the class 'buttons'
+    var button_group = document.querySelectorAll('.buttons');
+
+    // Add event listeners to SVG elements
+    svg_elements.forEach(function(svg_element) {
+        svg_element.addEventListener('mouseover', addClassOnHover);
+        svg_element.addEventListener('mouseout', removeClassOnHover);
+    });
+
+    // Add event listeners to button elements
+    button_group.forEach(function(button) {
+        button.addEventListener('mouseover', addClassOnHover);
+        button.addEventListener('mouseout', removeClassOnHover);
+    });
 });
+
 
